@@ -1,0 +1,293 @@
+<!doctype html>
+<html lang="mk">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Моника & Миле — Свадбена покана</title>
+<meta name="description" content="Свадбена покана: Моника и Миле — 26/09/2026, 19:30, Ресторан Ореов Лад. Потврди присуство." />
+<!-- Social preview -->
+<meta property="og:title" content="Моника & Миле — Свадбена покана" />
+<meta property="og:description" content="Свадба 26/09/2026, 19:30 — Ресторан Ореов Лад. Потврди присуство." />
+<meta property="og:type" content="website" />
+<meta property="og:image" content="" />
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg: #fcfbfa; /* Бисерно бела позадина */
+    --card: #ffffff;
+    --accent: #c5a059; /* Софистицирано златно */
+    --text: #2c2c2c; /* Темна јаглен-сива наместо чисто црна */
+    --muted: #737373;
+    --shadow: 0 15px 40px rgba(0,0,0,0.06);
+    --gold-grad: linear-gradient(135deg, #c5a059 0%, #e5cd96 100%);
+  }
+  *{box-sizing:border-box}
+  body{
+    margin:0;
+    font-family:"Montserrat", sans-serif;
+    font-weight: 300;
+    background: var(--bg);
+    color:var(--text);
+    -webkit-font-smoothing:antialiased;
+    -moz-osx-font-smoothing:grayscale;
+    padding:32px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    min-height:100vh;
+  }
+  .card{
+    background:var(--card);
+    width:100%;
+    max-width:850px;
+    border-radius:4px; /* Поостри, поелегантни агли */
+    box-shadow:var(--shadow);
+    overflow:hidden;
+    display:grid;
+    grid-template-columns: 1.2fr 1fr; /* Подобар баланс */
+    gap:0;
+    animation:fadeUp 1s ease both;
+  }
+  @keyframes fadeUp{ from{opacity:0; transform:translateY(20px)} to{opacity:1; transform:none} }
+  .left{
+    padding:50px 40px;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+  }
+  .right{
+    background: #faf8f5;
+    padding:40px;
+    border-left:1px solid rgba(197, 160, 89, 0.2); /* Нежна златна линија */
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+  }
+  .logo, .names, h3, .ornament {
+    font-family:"Cormorant Garamond", serif;
+  }
+  .logo {
+    font-size:42px;
+    font-weight:600;
+    letter-spacing: 2px;
+    margin:0 0 12px 0;
+  }
+  .subtitle{
+    color:var(--muted);
+    font-size:13px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-bottom:30px;
+  }
+  .divider{
+    height:1px;
+    width: 60%;
+    background: var(--accent);
+    margin:25px auto;
+    opacity: 0.4;
+  }
+  .names{
+    font-size:40px;
+    font-style: italic;
+    color: var(--accent);
+    margin:10px 0;
+  }
+  .info{
+    font-size:15px;
+    line-height:1.8;
+  }
+  .info strong {
+    font-weight: 500;
+    color: var(--text);
+  }
+  .gold-accent{
+    display:inline-block;
+    padding:8px 16px;
+    border: 1px solid var(--accent);
+    color: var(--accent);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-top:25px;
+    font-size:11px;
+  }
+
+  /* RSVP form area */
+  form.rsvp{
+    width:100%;
+    display:flex;
+    flex-direction:column;
+    gap:12px;
+    margin-top:10px;
+  }
+  .field{ width:100%; }
+  input[type="text"], input[type="email"], textarea{
+    width:100%;
+    padding:12px;
+    border-radius:2px;
+    border:1px solid rgba(0,0,0,0.1);
+    background: #ffffff;
+    font-family:"Montserrat", sans-serif;
+    font-size:13px;
+    color:var(--text);
+    transition: border 0.3s ease;
+  }
+  input:focus, textarea:focus {
+    outline: none;
+    border-color: var(--accent);
+  }
+  .btn{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    gap:8px;
+    padding:14px 20px;
+    border-radius:2px;
+    background:var(--gold-grad);
+    color:white;
+    font-family:"Montserrat", sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight:500;
+    border:none;
+    cursor:pointer;
+    font-size:12px;
+    transition: opacity 0.3s ease;
+  }
+  .btn:hover { opacity: 0.9; }
+  .muted-small{ font-size:12px; color:var(--muted); margin-top:6px; line-height:1.5;}
+
+  .ornament{
+    grid-column: 1 / -1;
+	width:100%;
+    text-align: center;
+    padding: 20px 0;
+    border-top: 1px solid rgba(197, 160, 89, 0.2);
+    color: var(--accent);
+    font-size:22px;
+    font-style: italic;
+  }
+
+  /* Responsive */
+  @media (max-width:840px){
+    .card{ grid-template-columns: 1fr; }
+    .right{ border-left:none; border-top:1px solid rgba(197, 160, 89, 0.2); padding:30px 20px;}
+    body{ padding:15px; }
+  }
+</style>
+
+</head>
+<body>
+  <main class="card" role="main" aria-labelledby="inviteTitle">
+    <section class="left">
+      <!--<div class="logo" id="inviteTitle">Моника & Миле</div>-->
+      <div class="subtitle">Со радост ве покануваме на нашата свадба</div>
+
+      <div class="names">Моника & Миле</div>
+      <div class="info">
+        Датум: <strong>26/09/2026</strong><br>
+        Време: <strong>19:30</strong><br>
+        Место: <strong>Ресторан Ореов Лад</strong>
+      </div>
+
+      <div class="divider"></div>
+
+      <!--<div class="info">
+        Ние би биле почестени да го прославиме овој ден заедно со вас. 
+		Ве молиме потврдете го вашето присуство до датумот подолу.
+      </div>-->
+
+     
+
+      <!--<div style="margin-top:18px;">
+        <small class="muted-small">Споделете го линкот или користете копчето за потврда.</small>
+      </div>-->
+    </section>
+
+    <aside class="right" aria-label="Потврда присуство">
+      <div style="width:100%; max-width:320px;">
+        <h3 style="margin:0 0 6px 0; font-family:'Playfair Display', serif;">Потврда присуство</h3>
+        <p class="muted-small">Пополнете го формуларот или испратете е-пошта преку копчето.</p>
+
+        <form class="rsvp" id="rsvpForm" onsubmit="return handleSubmit(event)">
+          <div class="field">
+            <input type="text" id="name" name="name" placeholder="Име и презиме" required />
+          </div>
+          <!--<div class="field">
+            <input type="email" id="email" name="email" placeholder="Е-пошта (или оставете празно)" />
+          </div>-->
+          <div class="field">
+            <input type="text" id="guests" name="guests" placeholder="Број на гости (вклучувајќи ве вас)" required />
+          </div>
+          <div class="field">
+            <textarea id="note" name="note" rows="2" placeholder="Кратка порака / Посебни потреби (пр. вегетаријанско мени)"></textarea>
+          </div>
+          <div style="display:flex; gap:8px; margin-top:6px;">
+            <button type="submit" class="btn">Испрати потврда</button>
+            <button type="button" class="btn" style="background:#fff; color:var(--text); border:1px solid rgba(0,0,0,0.06)" onclick="copyLink()">Копирај линк</button>
+          </div>
+        </form>
+
+        <div id="sentMsg" style="display:none; margin-top:12px; color:var(--muted); font-size:14px;">
+          Благодарам! Формата ќе отвори вашата е-пошта за испраќање на потврда.
+        </div>
+
+        <div style="margin-top:16px; text-align:center;">
+          <small class="muted-small">Рок за потврда: 10/09/2026</small>
+        </div>
+      </div>
+    </aside>
+
+    <div class="ornament" aria-hidden="true">— Со љубов, Моника & Миле —</div>
+  </main>
+
+<script>
+  // Default RSVP email (change if сакате друг)
+  const RSVP_EMAIL = 'bozhinoskamonika@gmail.com';
+
+  function handleSubmit(e){
+    e.preventDefault();
+    const name = document.getElementById('name').value.trim();
+    const email = document.getElementById('email').value.trim();
+    const guests = document.getElementById('guests').value.trim();
+    const note = document.getElementById('note').value.trim();
+
+    // Build mailto
+    const to = RSVP_EMAIL || '';
+    const subject = encodeURIComponent('RSVP: Моника & Миле — ' + name);
+    let body = `Име: ${name}%0D%0AБрој гости: ${guests}%0D%0A`;
+    if(email) body += `Е-пошта: ${email}%0D%0A`;
+    if(note) body += `Порака: ${encodeURIComponent(note)}%0D%0A`;
+    body += `%0D%0A(Пратено преку покана-линк)`;
+
+    // If a dedicated RSVP email was set, use mailto with to, else open default mail composer (user fills recipient)
+    const mailto = to ? `mailto:${to}?subject=${subject}&body=${body}` : `mailto:?subject=${subject}&body=${body}`;
+
+    document.getElementById('sentMsg').style.display = 'block';
+    // open mailto
+    window.location.href = mailto;
+    return false;
+  }
+
+  function copyLink(){
+    const url = window.location.href;
+    if(navigator.clipboard){
+      navigator.clipboard.writeText(url).then(()=> alert('Линкот е копиран'), ()=> fallbackCopy(url));
+    } else {
+      fallbackCopy(url);
+    }
+  }
+  function fallbackCopy(text){
+    const ta = document.createElement('textarea');
+    ta.value = text;
+    document.body.appendChild(ta);
+    ta.select();
+    try { document.execCommand('copy'); alert('Линкот е копиран'); }
+    catch(e){ alert('Копирањето не успеа — можете рачно да го копирате линкот.'); }
+    ta.remove();
+  }
+</script>
+</body>
+</html>
