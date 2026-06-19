@@ -211,24 +211,31 @@
         <h3 style="margin:0 0 6px 0; font-family:'Playfair Display', serif;">Потврда присуство</h3>
         <p class="muted-small">Пополнете го формуларот или испратете е-пошта преку копчето.</p>
 
-        <form class="rsvp" id="rsvpForm" onsubmit="return handleSubmit(event)">
-          <div class="field">
-            <input type="text" id="name" name="name" placeholder="Име и презиме" required />
-          </div>
-          <!--<div class="field">
-            <input type="email" id="email" name="email" placeholder="Е-пошта (или оставете празно)" />
-          </div>-->
-          <div class="field">
-            <input type="text" id="guests" name="guests" placeholder="Број на гости (вклучувајќи ве вас)" required />
-          </div>
-          <div class="field">
-            <textarea id="note" name="note" rows="2" placeholder="Кратка порака / Посебни потреби (пр. вегетаријанско мени)"></textarea>
-          </div>
-          <div style="display:flex; gap:8px; margin-top:6px;">
-            <button type="submit" class="btn">Испрати потврда</button>
-            <button type="button" class="btn" style="background:#fff; color:var(--text); border:1px solid rgba(0,0,0,0.06)" onclick="copyLink()">Копирај линк</button>
-          </div>
-        </form>
+       <form class="rsvp" action="bozhinoskamonika@gmail.com" method="POST">
+  <!-- Ова спречува спам -->
+  <input type="hidden" name="_captcha" value="false">
+  <!-- Наслов на мејлот што ќе ви стигне -->
+  <input type="hidden" name="_subject" value="RSVP: Нова потврда за свадбата!">
+  <!-- Да не ги носи на друга страна по сабмитот, туку да им покаже порака -->
+  <input type="hidden" name="_next" value="https://bozhinoskamonika-star.github.io/monika-mile-pokana-svadba/">
+
+  <div class="field">
+    <input type="text" id="name" name="Име_и_презиме" placeholder="Име и презиме" required />
+  </div>
+  <div class="field">
+    <input type="email" id="email" name="Емаил_на_гостинот" placeholder="Е-пошта (опционално)" />
+  </div>
+  <div class="field">
+    <input type="text" id="guests" name="Број_на_гости" placeholder="Број на гости (вклучувајќи ве вас)" required />
+  </div>
+  <div class="field">
+    <textarea id="note" name="Посебни_потреби" rows="2" placeholder="Кратка порака / Посебни потреби (пр. вегетаријанско мени)"></textarea>
+  </div>
+  <div style="display:flex; gap:8px; margin-top:6px;">
+    <button type="submit" class="btn">Испрати потврда</button>
+  </div>
+</form>
+
 
         <div id="sentMsg" style="display:none; margin-top:12px; color:var(--muted); font-size:14px;">
           Благодарам! Формата ќе отвори вашата е-пошта за испраќање на потврда.
